@@ -60,10 +60,8 @@ def send_emails(story):
 def main():
     # read config
     config = read_config(sys.argv[1] if len(sys.argv) > 1 else None)
-    print(config["users"][1])
     killers, victims = shuffle(config["users"])
     story = assign_symbol(killers, victims, config["symbols"])
-    print(story)
     send_emails(story)
 
 if __name__ == "__main__":
