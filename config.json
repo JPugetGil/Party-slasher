@@ -1,0 +1,33 @@
+{
+    "users": [
+        {
+            "name": "John",
+            "email": "john@test.te"
+        },
+        {
+            "name": "Jane",
+            "email": "jane@test.te"
+        },
+        {
+            "name": "Joe",
+            "email": "joe@test.te"
+        },
+        {
+            "name": "Jill",
+            "email": "jill@test.te"
+        },
+        {
+            "name": "Jack",
+            "email": "jack@test.te"
+        },
+        {
+            "name": "Jenny",
+            "email": "jenny@test.te"
+        },
+        {
+            "name": "Jim",
+            "email": "jim@test.te"
+        }
+    ],
+    "symbols": ["🤜", "🤌", "☝️", "🤞", "🤙", "👋", "👌", "🖖", "🤚", "👇"]
+}
