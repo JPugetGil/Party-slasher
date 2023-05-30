@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cuídate.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333333;
+        }
+
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+        }
+
+        h1 {
+            color: #006dcc;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cuídate...</h1>
+        <p>Hola {{victime}},</p>
+        <p>Tenemos información muy importante para ti.</p>
+        <p>Se rumorea que serás asesinado en {{date}} con un arma muy específica.</p>
+        <p>Si eres golpeado por esta arma, morirás 5 minutos después.</p>
+        <p>El arma es: {{arme}}.</p>
+        <p>Ten cuidado, no dudes en acusar a la persona si la descubres antes de que te ataque.</p>
+        <p>Atentamente,</p>
+        <p>El equipo de investigación.</p>
+    </div>
+</body>
+
+</html>

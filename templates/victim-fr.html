@@ -11,25 +11,11 @@
             color: #333333;
         }
 
-        .background-image {
-            background-image: url('https://cdn.pixabay.com/photo/2019/10/18/21/21/gun-4560173_1280.jpg');
-            background-size: cover;
-            display: block;
-            filter: blur(5px);
-            -webkit-filter: blur(5px);
-            height: 800px;
-            left: 0;
-            position: fixed;
-            right: 0;
-            z-index: 1;
-        }
-
         .container {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 2;
             max-width: 600px;
             padding: 20px;
             background-color: #ffffff;
@@ -47,14 +33,13 @@
 </head>
 
 <body>
-    <div class="background-image"></div>
     <div class="container">
         <h1>Attention à vous...</h1>
         <p>Bonjour {{victime}},</p>
         <p>Nous avons une information capitale à vous communiquer.</p>
-        <p>Une rumeur annonce que vous allez vous faire assassiner le 28 mai 2023 avec une arme bien précise.</p>
+        <p>Une rumeur annonce que vous allez vous faire assassiner le {{date}} avec une arme bien précise.</p>
         <p>Si vous venez à vous faire toucher par cette arme, vous mourrez alors 5 minutes après.</p>
-        <p>Le symbole est celui-ci : {{arme}}.</p>
+        <p>L'arme est la suivante : {{arme}}.</p>
         <p>Faîtes attention à vous, n'hésitez pas à accuser la personne si vous la découvrez avant
             qu'elle vous attaque.
         </p>

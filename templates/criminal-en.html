@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Confidential mission</title>
+</head>
+
+<body>
+    <div style="font-family: Courier New, monospace; margin: 0 auto; max-width: 600px;">
+        <h2 style="color: #1f3864;">Confidential mission</h2>
+        <p>Hello Agent {{criminel}},</p>
+
+        <p>We have a crucial mission that requires your expertise. Your objective is to attack a person. Here are the
+            details of the mission:</p>
+
+        <h3 style="color: #1f3864;">Target to attack:</h3>
+        <ul>
+            <li><strong>Target:</strong> {{victime}}</li>
+            <li><strong>Weapon:</strong> {{arme}}</li>
+            <li><strong>Location:</strong> {{lieu|default("Undefined", true)}}</li>
+        </ul>
+
+        <p>Make sure you take all the necessary precautions and act with discretion throughout the mission. Your success
+            will depend on your ability to adapt to unexpected situations.
+        </p>
+
+        <p>Stay alert and good luck.</p>
+
+        <p>Yours faithfully,</p>
+        <p>The management</p>
+    </div>
+</body>
+
+</html>

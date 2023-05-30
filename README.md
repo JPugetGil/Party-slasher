@@ -1,5 +1,5 @@
 # Party-slasher
-You have to kill someone and find your killer !
+You have to kill someone and find your killer!
 
 ## Installation des bibliothèques requises
 Ce guide explique comment installer les bibliothèques requises pour un projet à l'aide de pip, le gestionnaire de packages Python.
@@ -49,7 +49,7 @@ Une fois l'installation terminée, vous pouvez exécuter le projet avec toutes s
    Si vous utilisez un autre fournisseur, veuillez modifier les champs `smtp_address` et `smtp_port` en fonction de votre fournisseur.
 3) Enregistrez le fichier
 4) Ouvrez le fichier `config.json` avec votre éditeur de texte favori
-5) Définissez l'ensemble des paramètres de la partie (joueurs et joueuses, ainsi que leur mail -crucial pour qu'iels reçoivent les informations-)
+5) Définissez l'ensemble des paramètres de la partie (langue -*en, fr, en* sont supportés-, lieu et date [-au format iso-8601-](https://www.iso.org/fr/iso-8601-date-and-time-format.html) du jeu, joueurs et joueuses et leur mail -crucial pour qu'iels reçoivent les informations-)
 6) Enregistrez le fichier
 
 ### Instructions d'exécution

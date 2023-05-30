@@ -1,5 +1,7 @@
 {
-    "lieu": "Chez John",
+    "lieu": "Lyon",
+    "date": "2023-05-28",
+    "lang": "es",
     "users": [
         {
             "name": "John",

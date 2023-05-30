@@ -1,7 +1,8 @@
-import sys
 import os
 import json
 import random
+import datetime
+import locale
 import smtplib, ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -78,13 +79,37 @@ def send_template_email(template, to, subj, **kwargs):
     template = env.get_template(template)
     send_email(to, subj, template.render(**kwargs))
 
-def tell_the_story(story, lieu):
+def get_i18n_subject(type, lang):
+    """Returns the subject of the email."""
+    if type == "killer":
+        if lang == "fr":
+            return "Mission de haute importance"
+        elif lang == "en":
+            return "Mission of high importance"
+        elif lang == "es":
+            return "Misión de alta importancia"
+    elif type == "victim":
+        if lang == "fr":
+            return "Attention à vous !"
+        elif lang == "en":
+            return "Watch out !"
+        elif lang == "es":
+            return "¡Cuidado !"
+    return ""
+
+def get_i18n_date(lang, date):
+    """Returns the i18n formatted date of the event."""
+    dt = datetime.datetime.strptime(date, "%Y-%m-%d")
+    locale.setlocale(locale.LC_TIME, lang)
+    return dt.strftime("%A %d %B %Y")
+
+def tell_the_story(story, lieu, date, lang):
     """Sends an email to each killer and victim."""
     for i in range(len(story)):
         send_template_email(
-            template='criminal.html',
+            template=f'criminal-{lang}.html',
             to=story[i]['killer']['email'],
-            subj='Mission de haute importance',
+            subj=get_i18n_subject("killer", lang),
             criminel=story[i]['killer']['name'],
             victime=story[i]['victim']['name'],
             arme=story[i]['weapon'],
@@ -93,11 +118,12 @@ def tell_the_story(story, lieu):
         # print(f"Sending email to {story[i]['killer']['name']} ({story[i]['killer']['email']}) : you will kill {story[i]['victim']['name']} with {story[i]['weapon']}")
 
         send_template_email(
-            template='victim.html',
+            template=f'victim-{lang}.html',
             to=story[i]['victim']['email'],
-            subj='Attention à vous !',
+            subj=get_i18n_subject("victim", lang),
             victime=story[i]['victim']['name'],
-            arme=story[i]['weapon']
+            arme=story[i]['weapon'],
+            date=get_i18n_date(lang, date)
         )
         # print(f"Sending email to {story[i]['victim']['name']} ({story[i]['victim']['email']}) : the sign {story[i]['weapon']} will kill you")
 
@@ -106,7 +132,7 @@ def main():
     config = read_config("./config.json")
     killers, victims = shuffle(config["users"])
     story = assign_symbol(killers, victims, config["symbols"])
-    tell_the_story(story, config["lieu"])
+    tell_the_story(story, config["lieu"], config["date"], config["lang"])
 
 if __name__ == "__main__":
     main()

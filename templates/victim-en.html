@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Take care.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333333;
+        }
+
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+        }
+
+        h1 {
+            color: #006dcc;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Take care...</h1>
+        <p>Hello {{victime}},</p>
+        <p>We have some very important information for you.</p>
+        <p>Rumor has it that you will be murdered on {{date}} with a very specific weapon.</p>
+        <p>If you are hit by this weapon, you will die 5 minutes later.</p>
+        <p>The weapon is: {{arme}}.</p>
+        <p>Be careful, don't hesitate to accuse the person if you discover him before he attacks you.</p>
+        <p>Yours faithfully,</p>
+        <p>The investigation team.</p>
+    </div>
+</body>
+
+</html>
